@@ -33,6 +33,9 @@ angular.module('batteryStatus', ['ionic', 'ngCordova'])
       {
         alert("Battery -> " + args.level + " %");
       }
+      $scope.percentageStyle = {
+      width : $scope.batteryLevel + '%'     
+      };
     });
   });
 });

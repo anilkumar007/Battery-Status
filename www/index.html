@@ -9,6 +9,8 @@
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet"  href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet"  href="bootstrap.min.css">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -33,6 +35,12 @@
       <ion-content ng-controller="ExampleController">
        Status: {{batteryLevel}} %
        Plugged In: {{isPluggedIn}}
+       <progress value="{{batteryLevel}}" max="100"></progress>
+       <div class="progress-bar progress-bar-warning styleDiv" 
+  role="progressbar" aria-valuenow="{{batteryLevel}}" aria-valuemin="0" 
+  aria-valuemax="100" ng-style="percentageStyle">
+    <span class="sr-only"> {{batteryLevel}}% </span>
+</div>
       </ion-content>
     </ion-pane>
   </body>

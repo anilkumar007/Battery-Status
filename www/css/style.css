@@ -1,1 +1,90 @@
-/* Empty. Add your own CSS if you like */
+progress {
+
+    /* Turns off styling - not usually needed, but good to know. */
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /* gets rid of default border in Firefox and Opera. */
+    border: solid #cccccc 5px;
+    border-radius: 10px;
+    /* Dimensions */
+    width: 100px;
+    height: 40px;
+}
+
+/* Polyfill */
+progress[role]:after {
+    background-image: none; /* removes default background from polyfill */
+}
+
+/*
+ * Background of the progress bar background
+ */
+
+/* Firefox and Polyfill */
+progress {
+    background: #cccccc !important; /* !important only needed in polyfill */
+}
+
+/* Chrome */
+progress::-webkit-progress-bar {
+    background: #cccccc;
+}
+
+/*
+ * Background of the progress bar value
+ */
+
+/* Firefox */
+progress::-moz-progress-bar {
+    border-radius: 5px;
+    background-image: -moz-linear-gradient(
+            center bottom,
+            rgb(43,194,83) 37%,
+            rgb(84,240,84) 69%
+    );
+}
+
+/* Chrome */
+progress::-webkit-progress-value {
+    border-radius: 5px;
+    background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            left top,
+            color-stop(0, rgb(43,194,83)),
+            color-stop(1, rgb(84,240,84))
+    );
+    background-image: -webkit-linear-gradient(
+            center bottom,
+            rgb(43,194,83) 37%,
+            rgb(84,240,84) 69%
+    );
+}
+
+/* Polyfill */
+progress[aria-valuenow]:before {
+    border-radius: 5px;
+    background-image: -moz-linear-gradient(
+            center bottom,
+            rgb(43,194,83) 37%,
+            rgb(84,240,84) 69%
+    );
+    background-image: -ms-linear-gradient(
+            center bottom,
+            rgb(43,194,83) 37%,
+            rgb(84,240,84) 69%
+    );
+    background-image: -o-linear-gradient(
+            center bottom,
+            rgb(43,194,83) 37%,
+            rgb(84,240,84) 69%
+    );
+}
+
+.progress-bar.styleDiv {
+width: 25% !important;
+background: green !important;
+border: 2px solid gray !important;
+padding-left: 10px !important;
+}
